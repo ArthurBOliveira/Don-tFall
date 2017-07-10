@@ -5,9 +5,11 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     public Text txtScore;
+    public Text txtBombs;
     public Transform initialPos;
 
     public int score;
+    public int bombs;
 
     public float horSpeed;
     public float verSpeed;
@@ -16,14 +18,17 @@ public class Player : MonoBehaviour
     public string horKey;
     public string verKey;
     public string fireKey;
+    public string bombKey;
 
     public GameObject bulletPrefab;
+    public GameObject bombPrefab;
     public Transform bulletSpawn;
 
     private void Start()
     {
         score = 0;
-        txtScore.text = "" + score;
+        txtScore.text = "Score: " + score;
+        txtBombs.text = "Bombs: " + bombs;
     }
 
     private void Update()
@@ -35,15 +40,16 @@ public class Player : MonoBehaviour
         transform.Rotate(0, y, 0);
 
         if (Input.GetKeyDown(fireKey))
-        {
             CmdFire();
-        }
+
+        if (Input.GetKeyDown(bombKey) && bombs > 0)
+            FireBomb();
     }
 
     private void CmdFire()
     {
         // Create the Bullet from the Bullet Prefab
-        var bullet = (GameObject)Instantiate(
+        GameObject bullet = Instantiate(
             bulletPrefab,
             bulletSpawn.position,
             bulletSpawn.rotation);
@@ -55,11 +61,35 @@ public class Player : MonoBehaviour
         Destroy(bullet, 3f);
     }
 
+    private void FireBomb()
+    {
+        // Create the Bullet from the Bullet Prefab
+        GameObject bomb = Instantiate(
+            bombPrefab,
+            bulletSpawn.position,
+            bulletSpawn.rotation);
+
+        // Add velocity to the bullet
+        bomb.GetComponent<Rigidbody>().velocity = bomb.transform.right * bulletSpeed;
+
+        // Destroy the bullet after 2 seconds
+        Destroy(bomb, 3f);
+
+        bombs--;
+        txtBombs.text = "Bombs: " + bombs;
+    }
+
     public void Respawn()
     {
         score++;
-        txtScore.text = "" + score;
+        txtScore.text = "Score: " + score;
 
         transform.position = initialPos.position;
+    }
+
+    public void AddBomb(int b)
+    {
+        bombs += b;
+        txtBombs.text = "Bombs: " + bombs;
     }
 }
