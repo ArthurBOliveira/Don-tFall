@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
         txtBombs.text = "Bombs: " + bombs;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         var x = Input.GetAxis(verKey) * Time.deltaTime * verSpeed;
         var y = Input.GetAxis(horKey) * Time.deltaTime * horSpeed;
