@@ -84,6 +84,7 @@ public class Player : MonoBehaviour
         score++;
         txtScore.text = "Score: " + score;
 
+        GetComponent<Rigidbody>().velocity = new Vector3();
         transform.position = initialPos.position;
     }
 
