@@ -9,4 +9,9 @@ public class Menu : MonoBehaviour {
     {
         SceneManager.LoadScene("Main");
     }
+
+    public void SocketTest()
+    {
+        SceneManager.LoadScene("SocketTest");
+    }
 }
