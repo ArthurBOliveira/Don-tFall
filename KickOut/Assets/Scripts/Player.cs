@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using SocketIO;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 
@@ -19,16 +21,27 @@ public class Player : MonoBehaviour
     public string verKey;
     public string fireKey;
     public string bombKey;
+    public string name;
 
     public GameObject bulletPrefab;
     public GameObject bombPrefab;
     public Transform bulletSpawn;
+
+    private SocketIOComponent socket;
+
+    #region Private
+    private void Awake()
+    {
+        socket = GameObject.FindGameObjectWithTag("Socket").GetComponent<SocketIOComponent>();
+    }
 
     private void Start()
     {
         score = 0;
         txtScore.text = "Score: " + score;
         txtBombs.text = "Bombs: " + bombs;
+
+        socket.On("moveFromServer", MoveFromServer);
     }
 
     private void FixedUpdate()
@@ -44,6 +57,8 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(bombKey) && bombs > 0)
             FireBomb();
+
+        EmitPosition();
     }
 
     private void CmdFire()
@@ -79,6 +94,37 @@ public class Player : MonoBehaviour
         txtBombs.text = "Bombs: " + bombs;
     }
 
+    private void EmitPosition()
+    {
+        JSONObject obj;
+
+        Dictionary<string, string> data = new Dictionary<string, string>();
+        data["x"] = gameObject.transform.position.x.ToString();
+        data["y"] = gameObject.transform.position.y.ToString();
+        data["z"] = gameObject.transform.position.z.ToString();
+        data["name"] = name;
+
+        obj = new JSONObject(data);
+
+        socket.Emit("updatePosition", obj);
+    }
+
+    private void MoveFromServer(SocketIOEvent obj)
+    {
+        Dictionary<string, string> data = obj.data.ToDictionary();
+
+        if(data["name"] == name)
+        {
+            float x = float.Parse(data["x"]);
+            float y = float.Parse(data["y"]);
+            float z = float.Parse(data["z"]);
+
+            transform.position = new Vector3(x, y, z);
+        }
+    }
+    #endregion
+
+    #region Public
     public void Respawn()
     {
         score++;
@@ -93,4 +139,5 @@ public class Player : MonoBehaviour
         bombs += b;
         txtBombs.text = "Bombs: " + bombs;
     }
+    #endregion
 }
