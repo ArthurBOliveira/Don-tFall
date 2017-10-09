@@ -10,6 +10,11 @@ public class Menu : MonoBehaviour {
         SceneManager.LoadScene("Main");
     }
 
+    public void Online()
+    {
+        SceneManager.LoadScene("MainOnline");
+    }
+
     public void SocketTest()
     {
         SceneManager.LoadScene("SocketTest");
