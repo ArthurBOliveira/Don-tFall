@@ -7,7 +7,10 @@ public class Online : MonoBehaviour
 {
     public string NAME;
 
-    private SocketIOComponent socket;    
+    private SocketIOComponent socket;
+
+    private string actionFire = "Fire";
+    private string actionBomb = "Bomb";
 
     #region Private
     private void Awake()
@@ -37,6 +40,23 @@ public class Online : MonoBehaviour
         obj = new JSONObject(data);
 
         socket.Emit("updatePosition", obj);
+    }
+    #endregion
+
+    #region Public
+    public void BroadcastAction(string action)
+    {
+        #region Broadcast
+        JSONObject _player;
+
+        Dictionary<string, string> data = new Dictionary<string, string>();
+        data["name"] = NAME;
+        data["action"] = action;
+
+        _player = new JSONObject(data);
+
+        socket.Emit("playerAction", _player);
+        #endregion
     }
     #endregion
 }

@@ -26,7 +26,14 @@ public class Player : MonoBehaviour
     public GameObject bombPrefab;
     public Transform bulletSpawn;
 
+    private Online online;
+
     #region Private
+    private void Awake()
+    {
+        online = GetComponent<Online>();
+    }
+
     private void Start()
     {
         score = 0;
@@ -43,43 +50,22 @@ public class Player : MonoBehaviour
         transform.Rotate(0, y, 0);
 
         if (Input.GetKeyDown(fireKey))
+        {
+            //Shoot local
             CmdFire();
 
+            //Broadcast shoot
+            online.BroadcastAction("Fire");
+        }
+
         if (Input.GetKeyDown(bombKey) && bombs > 0)
-            FireBomb();        
-    }
+        {
+            //Shoot local
+            CmdBomb();
 
-    private void CmdFire()
-    {
-        // Create the Bullet from the Bullet Prefab
-        GameObject bullet = Instantiate(
-            bulletPrefab,
-            bulletSpawn.position,
-            bulletSpawn.rotation);
-
-        // Add velocity to the bullet
-        bullet.GetComponent<Rigidbody>().velocity = bullet.transform.right * bulletSpeed;
-
-        // Destroy the bullet after 2 seconds
-        Destroy(bullet, 3f);
-    }
-
-    private void FireBomb()
-    {
-        // Create the Bullet from the Bullet Prefab
-        GameObject bomb = Instantiate(
-            bombPrefab,
-            bulletSpawn.position,
-            bulletSpawn.rotation);
-
-        // Add velocity to the bullet
-        bomb.GetComponent<Rigidbody>().velocity = bomb.transform.right * bulletSpeed;
-
-        // Destroy the bullet after 2 seconds
-        Destroy(bomb, 3f);
-
-        bombs--;
-        txtBombs.text = "Bombs: " + bombs;
+            //Broadcast shoot
+            online.BroadcastAction("Bomb");
+        }
     }
     #endregion
 
@@ -96,6 +82,39 @@ public class Player : MonoBehaviour
     public void AddBomb(int b)
     {
         bombs += b;
+        txtBombs.text = "Bombs: " + bombs;
+    }
+
+    public void CmdFire()
+    {
+        // Create the Bullet from the Bullet Prefab
+        GameObject bullet = Instantiate(
+            bulletPrefab,
+            bulletSpawn.position,
+            bulletSpawn.rotation);
+
+        // Add velocity to the bullet
+        bullet.GetComponent<Rigidbody>().velocity = bullet.transform.right * bulletSpeed;
+
+        // Destroy the bullet after 2 seconds
+        Destroy(bullet, 3f);
+    }
+
+    public void CmdBomb()
+    {
+        // Create the Bullet from the Bullet Prefab
+        GameObject bomb = Instantiate(
+            bombPrefab,
+            bulletSpawn.position,
+            bulletSpawn.rotation);
+
+        // Add velocity to the bullet
+        bomb.GetComponent<Rigidbody>().velocity = bomb.transform.right * bulletSpeed;
+
+        // Destroy the bullet after 2 seconds
+        Destroy(bomb, 3f);
+
+        bombs--;
         txtBombs.text = "Bombs: " + bombs;
     }
     #endregion

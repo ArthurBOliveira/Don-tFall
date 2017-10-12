@@ -1,6 +1,7 @@
 ﻿using SocketIO;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.UI;
@@ -18,14 +19,40 @@ public class GameController : MonoBehaviour
 
     public InputField txtName;
     public bool isOnline;
+    public bool isPlaying = false;
 
     private SocketIOComponent socket;
+
+    private string playerName;
 
     #region Private
     private void Awake()
     {
+        isPlaying = false;
         socket = GameObject.FindGameObjectWithTag("Socket").GetComponent<SocketIOComponent>();
         socket.On("newPlayerServer", SetUpNewPlayer);
+    }
+
+    private void FixedUpdate()
+    {
+        if (!isPlaying) return;
+
+        GameObject mainPlayer = GameObject.FindGameObjectWithTag("MainPlayer");
+        Debug.Log(mainPlayer);
+
+        #region Broadcast
+        JSONObject _player;
+
+        Dictionary<string, string> data = new Dictionary<string, string>();
+        data["x"] = mainPlayer.transform.position.x.ToString();
+        data["y"] = mainPlayer.transform.position.y.ToString();
+        data["z"] = mainPlayer.transform.position.z.ToString();
+        data["name"] = playerName;
+
+        _player = new JSONObject(data);
+
+        socket.Emit("newPlayer", _player);
+        #endregion
     }
 
     private void Start()
@@ -68,12 +95,16 @@ public class GameController : MonoBehaviour
     #region Public
     public void SetUpNewPlayer(SocketIOEvent obj)
     {
+        List<GameObject> players = GameObject.FindGameObjectsWithTag("Player").ToList();
+
         Dictionary<string, string> data = obj.data.ToDictionary();
 
         string name = data["name"];
         float x = float.Parse(data["x"]);
         float y = float.Parse(data["y"]);
         float z = float.Parse(data["z"]);
+
+        if (players.Find(f => f.GetComponent<Player>().name == name)) return;
 
         Vector3 spawn = new Vector3(x, y, z);
 
@@ -86,6 +117,8 @@ public class GameController : MonoBehaviour
     public void EmitNewPlayer()
     {
         string name = txtName.text;
+        playerName = name;
+        isPlaying = true;
 
         mainGame.SetActive(true);
         chooseUI.gameObject.SetActive(false);
