@@ -11,12 +11,19 @@ public class OnlinePlayer : MonoBehaviour
     private string actionFire = "Fire";
     private string actionBomb = "Bomb";
 
+    private Player _player;
+
     #region Private
     private void Awake()
     {
         socket = GameObject.FindGameObjectWithTag("Socket").GetComponent<SocketIOComponent>();
         socket.On("moveFromServer", MoveFromServer);
-        socket.On("playerActionServer", PlayerActionServer);
+        socket.On("playerActionServer", PlayerActionServer);        
+    }
+
+    private void Start()
+    {
+        _player = GetComponent<Player>();
     }
 
     #endregion
@@ -24,15 +31,10 @@ public class OnlinePlayer : MonoBehaviour
     #region Public
     public void PlayerActionServer(SocketIOEvent obj)
     {
+        Debug.Log(obj);
         Dictionary<string, string> data = obj.data.ToDictionary();
 
-        if (data["name"] == NAME)
-        {
-            if (data["action"] == actionFire)
-                GetComponent<Player>().CmdFire();
-            if (data["action"] == actionBomb)
-                GetComponent<Player>().CmdBomb();
-        }
+        StartCoroutine(PlayerAction(data));        
     }
 
     public void MoveFromServer(SocketIOEvent obj)
@@ -52,6 +54,21 @@ public class OnlinePlayer : MonoBehaviour
             transform.position = new Vector3(x, y, z);
             transform.rotation = new Quaternion(xr, yr, zr, wr);
         }
+    }
+
+    private IEnumerator PlayerAction(Dictionary<string, string> data)
+    {
+        if (data["name"] == NAME)
+        {
+            Debug.Log(_player);
+
+            if (data["action"] == actionFire)
+                _player.CmdFire();
+            if (data["action"] == actionBomb)
+                _player.CmdBomb();
+        }        
+
+        yield return new WaitForSeconds(0);
     }
     #endregion
 }
