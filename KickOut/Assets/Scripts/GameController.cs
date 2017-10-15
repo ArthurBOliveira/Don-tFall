@@ -133,7 +133,7 @@ public class GameController : MonoBehaviour
 
         //Instantiate localy
         GameObject mp = Instantiate(onlinePlayer, spawn, onlinePlayer.transform.rotation);
-        mp.GetComponent<OnlinePlayer>().NAME = name;
+        mp.GetComponent<OnlinePlayer>().NAME = _name;
         mp.GetComponent<OnlinePlayer>().ROOM = room;
     }
 

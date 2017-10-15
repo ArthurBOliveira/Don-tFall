@@ -8,17 +8,20 @@ public class OnlinePlayer : MonoBehaviour
     public string NAME;
     public string ROOM;
 
+    public float bulletSpeed = -10;
+
+    public GameObject bulletPrefab;
+    public GameObject bombPrefab;
+    public Transform bulletSpawn;
+
     private SocketIOComponent socket;
     private string actionFire = "Fire";
     private string actionBomb = "Bomb";
-
-    private Player _player;
 
     #region Private
     private void Awake()
     {
         socket = GameObject.FindGameObjectWithTag("Socket").GetComponent<SocketIOComponent>();
-        _player = GetComponent<Player>();
     }
 
     private void Start()
@@ -61,15 +64,43 @@ public class OnlinePlayer : MonoBehaviour
     {
         if (data["name"] == NAME && data["room"] == ROOM)
         {
-            Debug.Log(_player);
-
             if (data["action"] == actionFire)
-                _player.CmdFire();
+                CmdFire();
             if (data["action"] == actionBomb)
-                _player.CmdBomb();
+                CmdBomb();
         }        
 
         yield return new WaitForSeconds(0);
+    }
+
+    public void CmdFire()
+    {
+        // Create the Bullet from the Bullet Prefab
+        GameObject bullet = Instantiate(
+            bulletPrefab,
+            bulletSpawn.position,
+            bulletSpawn.rotation);
+
+        // Add velocity to the bullet
+        bullet.GetComponent<Rigidbody>().velocity = bullet.transform.right * bulletSpeed;
+
+        // Destroy the bullet after 2 seconds
+        Destroy(bullet, 3f);
+    }
+
+    public void CmdBomb()
+    {
+        // Create the Bullet from the Bullet Prefab
+        GameObject bomb = Instantiate(
+            bombPrefab,
+            bulletSpawn.position,
+            bulletSpawn.rotation);
+
+        // Add velocity to the bullet
+        bomb.GetComponent<Rigidbody>().velocity = bomb.transform.right * bulletSpeed;
+
+        // Destroy the bullet after 2 seconds
+        Destroy(bomb, 3f);
     }
     #endregion
 }

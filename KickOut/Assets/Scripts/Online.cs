@@ -61,5 +61,17 @@ public class Online : MonoBehaviour
         socket.Emit("playerAction", _player);
         #endregion
     }
+
+    public void Respawn()
+    {
+        GameObject[] spawns =  GameObject.FindGameObjectWithTag("MainCamera").GetComponent<GameController>().spawnPositions;
+
+        int rnd = UnityEngine.Random.Range(0, 4);
+
+        GameObject spawn = spawns[rnd];
+
+        GetComponent<Rigidbody>().velocity = new Vector3();
+        transform.position = spawn.transform.position;
+    }
     #endregion
 }

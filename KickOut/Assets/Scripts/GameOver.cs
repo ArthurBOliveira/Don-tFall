@@ -6,7 +6,7 @@ public class GameOver : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
-            other.GetComponent<Player>().Respawn();
+        if (other.tag == "MainPlayer")
+            other.GetComponent<Online>().Respawn();
     }
 }
