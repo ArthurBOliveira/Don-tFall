@@ -37,8 +37,8 @@ public class Player : MonoBehaviour
     private void Start()
     {
         score = 0;
-        txtScore.text = "Score: " + score;
-        txtBombs.text = "Bombs: " + bombs;
+        //txtScore.text = "Score: " + score;
+        //txtBombs.text = "Bombs: " + bombs;
     }
 
     private void FixedUpdate()
@@ -115,7 +115,7 @@ public class Player : MonoBehaviour
         Destroy(bomb, 3f);
 
         bombs--;
-        txtBombs.text = "Bombs: " + bombs;
+        //txtBombs.text = "Bombs: " + bombs;
     }
     #endregion
 }

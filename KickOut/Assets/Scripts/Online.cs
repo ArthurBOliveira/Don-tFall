@@ -6,6 +6,7 @@ using UnityEngine;
 public class Online : MonoBehaviour
 {
     public string NAME;
+    public string ROOM;
 
     private SocketIOComponent socket;
 
@@ -32,6 +33,7 @@ public class Online : MonoBehaviour
         data["y"] = gameObject.transform.position.y.ToString();
         data["z"] = gameObject.transform.position.z.ToString();
         data["name"] = NAME;
+        data["room"] = ROOM;
         data["xr"] = gameObject.transform.rotation.x.ToString();
         data["yr"] = gameObject.transform.rotation.y.ToString();
         data["zr"] = gameObject.transform.rotation.z.ToString();
@@ -51,6 +53,7 @@ public class Online : MonoBehaviour
 
         Dictionary<string, string> data = new Dictionary<string, string>();
         data["name"] = NAME;
+        data["room"] = ROOM;
         data["action"] = action;
 
         _player = new JSONObject(data);

@@ -6,6 +6,7 @@ using UnityEngine;
 public class OnlinePlayer : MonoBehaviour
 {
     public string NAME;
+    public string ROOM;
 
     private SocketIOComponent socket;
     private string actionFire = "Fire";
@@ -17,13 +18,13 @@ public class OnlinePlayer : MonoBehaviour
     private void Awake()
     {
         socket = GameObject.FindGameObjectWithTag("Socket").GetComponent<SocketIOComponent>();
-        socket.On("moveFromServer", MoveFromServer);
-        socket.On("playerActionServer", PlayerActionServer);        
+        _player = GetComponent<Player>();
     }
 
     private void Start()
-    {
-        _player = GetComponent<Player>();
+    {        
+        socket.On("moveFromServer", MoveFromServer);
+        socket.On("playerActionServer", PlayerActionServer);
     }
 
     #endregion
@@ -41,7 +42,7 @@ public class OnlinePlayer : MonoBehaviour
     {
         Dictionary<string, string> data = obj.data.ToDictionary();
 
-        if (data["name"] == NAME)
+        if (data["name"] == NAME && data["room"] == ROOM)
         {
             float x = float.Parse(data["x"]);
             float y = float.Parse(data["y"]);
@@ -56,9 +57,9 @@ public class OnlinePlayer : MonoBehaviour
         }
     }
 
-    private IEnumerator PlayerAction(Dictionary<string, string> data)
+    public IEnumerator PlayerAction(Dictionary<string, string> data)
     {
-        if (data["name"] == NAME)
+        if (data["name"] == NAME && data["room"] == ROOM)
         {
             Debug.Log(_player);
 
