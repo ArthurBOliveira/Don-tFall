@@ -76,35 +76,19 @@ public class GameController : MonoBehaviour
 
     private void SetUpCurrentPlayers(JSONObject obj)
     {
-        if (obj[0] != null)
+        string[] players = obj[0].ToString().Replace("\"", "").Split(',');
+
+        Debug.Log(players);
+
+        for (int i = 0; i < players.Length; i++)
         {
-            string p = obj[0].ToString().Replace("\"", "");
+            string p = players[i];
 
             Debug.Log(p);
 
             if (p != "null")
                 InstatiateNewPlayer(p, currentRoom, new Vector3());
-        }
-
-        if (obj[1] != null)
-        {
-            string p = obj[0].ToString().Replace("\"", "");
-
-            Debug.Log(p);
-
-            if (p != "null")
-                InstatiateNewPlayer(p, currentRoom, new Vector3());
-        }
-
-        if (obj[2] != null)
-        {
-            string p = obj[0].ToString().Replace("\"", "");
-
-            Debug.Log(p);
-
-            if (p != "null")
-                InstatiateNewPlayer(p, currentRoom, new Vector3());
-        }
+        }             
     }
 
     private void InstatiateNewPlayer(string _name, string _room, Vector3 position)
