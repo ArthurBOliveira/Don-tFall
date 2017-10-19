@@ -8,7 +8,7 @@ public class BombPower : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if(other.tag == "MainPlayer")
         {
             other.GetComponent<Player>().AddBomb(bombs);
             Destroy(gameObject);

@@ -82,7 +82,7 @@ public class Player : MonoBehaviour
     public void AddBomb(int b)
     {
         bombs += b;
-        txtBombs.text = "Bombs: " + bombs;
+        //txtBombs.text = "Bombs: " + bombs;
     }
 
     public void CmdFire()
