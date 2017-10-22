@@ -13,5 +13,10 @@ public class BombPower : MonoBehaviour
             other.GetComponent<Player>().AddBomb(bombs);
             Destroy(gameObject);
         }
+
+        if (other.tag == "Player")
+        {
+            Destroy(gameObject);
+        }
     }
 }

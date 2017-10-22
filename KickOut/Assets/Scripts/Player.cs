@@ -91,10 +91,10 @@ public class Player : MonoBehaviour
         GameObject bullet = Instantiate(
             bulletPrefab,
             bulletSpawn.position,
-            bulletSpawn.rotation);
+            transform.rotation);
 
         // Add velocity to the bullet
-        bullet.GetComponent<Rigidbody>().velocity = bullet.transform.right * bulletSpeed;
+        bullet.GetComponent<Rigidbody>().velocity = bulletSpawn.right * bulletSpeed;
 
         // Destroy the bullet after 2 seconds
         Destroy(bullet, 3f);
