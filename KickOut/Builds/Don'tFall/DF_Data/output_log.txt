@@ -1,0 +1,46 @@
+Initialize engine version: 5.6.1f1 (2860b30f0b54)
+GfxDevice: creating device client; threaded=1
+d3d11: D3D_FEATURE_LEVEL_11_1 not-recognized (only 11.0 runtime installed?)
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 750 Ti (ID=0x1380)
+    Vendor:   NVIDIA
+    VRAM:     1993 MB
+    Driver:   9.18.13.5306
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Arthur\Documents\Source Tree\Don'tFall\KickOut\Builds\Don'tFall\DF_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Arthur\Documents\Source Tree\Don'tFall\KickOut\Builds\Don'tFall\DF_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Arthur\Documents\Source Tree\Don'tFall\KickOut\Builds\Don'tFall\DF_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Arthur\Documents\Source Tree\Don'tFall\KickOut\Builds\Don'tFall\DF_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Arthur\Documents\Source Tree\Don'tFall\KickOut\Builds\Don'tFall\DF_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Arthur\Documents\Source Tree\Don'tFall\KickOut\Builds\Don'tFall\DF_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Arthur\Documents\Source Tree\Don'tFall\KickOut\Builds\Don'tFall\DF_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Arthur\Documents\Source Tree\Don'tFall\KickOut\Builds\Don'tFall\DF_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Arthur\Documents\Source Tree\Don'tFall\KickOut\Builds\Don'tFall\DF_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\Arthur\Documents\Source Tree\Don'tFall\KickOut\Builds\Don'tFall\DF_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.020 seconds
+Platform assembly: C:\Users\Arthur\Documents\Source Tree\Don'tFall\KickOut\Builds\Don'tFall\DF_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Arthur\Documents\Source Tree\Don'tFall\KickOut\Builds\Don'tFall\DF_Data\Managed\System.dll (this message is harmless)
+Platform assembly: C:\Users\Arthur\Documents\Source Tree\Don'tFall\KickOut\Builds\Don'tFall\DF_Data\Managed\Mono.Security.dll (this message is harmless)
+desktop: 2560x1080 60Hz; virtual: 2560x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 0.992262 ms
+Unloading 7 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 4.642476 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 570.
+Total: 0.321814 ms (FindLiveObjects: 0.048338 ms CreateObjectMapping: 0.017216 ms MarkObjects: 0.242354 ms  DeleteObjects: 0.012912 ms)
+
+System.String[]
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+null
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: f8c -> priority: 1 
+  Thread -> id: 231c -> priority: 1 

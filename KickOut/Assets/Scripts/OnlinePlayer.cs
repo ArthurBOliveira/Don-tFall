@@ -75,11 +75,13 @@ public class OnlinePlayer : MonoBehaviour
 
     public void CmdFire()
     {
+        Quaternion q = new Quaternion(transform.rotation.x, (transform.rotation.y - 186f), transform.rotation.z, transform.rotation.w);
+
         // Create the Bullet from the Bullet Prefab
         GameObject bullet = Instantiate(
             bulletPrefab,
             bulletSpawn.position,
-            bulletSpawn.rotation);
+            q);
 
         // Add velocity to the bullet
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.right * bulletSpeed;

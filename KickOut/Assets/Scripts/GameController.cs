@@ -40,7 +40,6 @@ public class GameController : MonoBehaviour
     {
         socket.On("newPlayerServer", SetUpNewPlayer);
         socket.On("currentPlayers", SetUpCurrentPlayers);
-        StartCoroutine(PowersSpawner());
         SetUpGame();
     }
 
@@ -53,14 +52,14 @@ public class GameController : MonoBehaviour
         {
             float x1 = UnityEngine.Random.Range(-17.1f, -25.1f);
             float z1 = UnityEngine.Random.Range(-14.1f, 14.1f);
-            position1 = new Vector3(x1, 0.5f, z1);
+            position1 = new Vector3(x1, 0, z1);
 
             float x2 = UnityEngine.Random.Range(17.1f, 25.1f);
             float z2 = UnityEngine.Random.Range(-14.1f, 14.1f);
-            position2 = new Vector3(x2, 0.5f, z2);
+            position2 = new Vector3(x2, 0, z2);
 
-            Destroy(Instantiate(bombPower, position1, Quaternion.identity), 10f);
-            Destroy(Instantiate(bombPower, position2, Quaternion.identity), 10f);
+            Destroy(Instantiate(bombPower, position1, bombPower.transform.rotation), 10f);
+            Destroy(Instantiate(bombPower, position2, bombPower.transform.rotation), 10f);
 
             yield return new WaitForSeconds(20f);
         }
@@ -163,6 +162,8 @@ public class GameController : MonoBehaviour
         socket.Emit("join", _player, SetUpCurrentPlayers);
         gameObject.SetActive(true);
         #endregion
+
+        StartCoroutine(PowersSpawner());
     }
     #endregion
 }

@@ -91,7 +91,7 @@ public class Player : MonoBehaviour
         GameObject bullet = Instantiate(
             bulletPrefab,
             bulletSpawn.position,
-            transform.rotation);
+            bulletSpawn.rotation);
 
         // Add velocity to the bullet
         bullet.GetComponent<Rigidbody>().velocity = bulletSpawn.right * bulletSpeed;
