@@ -26,21 +26,239 @@ desktop: 2560x1080 60Hz; virtual: 2560x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 0.992262 ms
+UnloadTime: 1.075023 ms
 Unloading 7 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 4.642476 ms
+UnloadTime: 4.878161 ms
 
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 570.
-Total: 0.321814 ms (FindLiveObjects: 0.048338 ms CreateObjectMapping: 0.017216 ms MarkObjects: 0.242354 ms  DeleteObjects: 0.012912 ms)
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 586.
+Total: 0.351277 ms (FindLiveObjects: 0.037412 ms CreateObjectMapping: 0.025824 ms MarkObjects: 0.284399 ms  DeleteObjects: 0.003641 ms)
 
 System.String[]
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-null
+abc
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Initialize engine version: 5.6.1f1 (2860b30f0b54)
+GfxDevice: creating device client; threaded=1
+d3d11: D3D_FEATURE_LEVEL_11_1 not-recognized (only 11.0 runtime installed?)
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 750 Ti (ID=0x1380)
+    Vendor:   NVIDIA
+    VRAM:     1993 MB
+    Driver:   9.18.13.5306
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Arthur\Documents\Source Tree\Don'tFall\KickOut\Builds\Don'tFall\DF_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Arthur\Documents\Source Tree\Don'tFall\KickOut\Builds\Don'tFall\DF_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Arthur\Documents\Source Tree\Don'tFall\KickOut\Builds\Don'tFall\DF_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Arthur\Documents\Source Tree\Don'tFall\KickOut\Builds\Don'tFall\DF_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Arthur\Documents\Source Tree\Don'tFall\KickOut\Builds\Don'tFall\DF_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Arthur\Documents\Source Tree\Don'tFall\KickOut\Builds\Don'tFall\DF_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Arthur\Documents\Source Tree\Don'tFall\KickOut\Builds\Don'tFall\DF_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Arthur\Documents\Source Tree\Don'tFall\KickOut\Builds\Don'tFall\DF_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Arthur\Documents\Source Tree\Don'tFall\KickOut\Builds\Don'tFall\DF_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\Arthur\Documents\Source Tree\Don'tFall\KickOut\Builds\Don'tFall\DF_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.018 seconds
+Platform assembly: C:\Users\Arthur\Documents\Source Tree\Don'tFall\KickOut\Builds\Don'tFall\DF_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Arthur\Documents\Source Tree\Don'tFall\KickOut\Builds\Don'tFall\DF_Data\Managed\System.dll (this message is harmless)
+Platform assembly: C:\Users\Arthur\Documents\Source Tree\Don'tFall\KickOut\Builds\Don'tFall\DF_Data\Managed\Mono.Security.dll (this message is harmless)
+desktop: 2560x1080 60Hz; virtual: 2560x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 1.117401 ms
+Unloading 7 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 4.926168 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 586.
+Total: 0.332737 ms (FindLiveObjects: 0.061581 ms CreateObjectMapping: 0.025162 ms MarkObjects: 0.242020 ms  DeleteObjects: 0.003310 ms)
+
+System.String[]
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+abc
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+qwe
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+System.Collections.Generic.Dictionary`2[System.String,System.String]
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Initialize engine version: 5.6.1f1 (2860b30f0b54)
+GfxDevice: creating device client; threaded=1
+d3d11: D3D_FEATURE_LEVEL_11_1 not-recognized (only 11.0 runtime installed?)
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 750 Ti (ID=0x1380)
+    Vendor:   NVIDIA
+    VRAM:     1993 MB
+    Driver:   9.18.13.5306
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Arthur\Documents\Source Tree\Don'tFall\KickOut\Builds\Don'tFall\DF_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Arthur\Documents\Source Tree\Don'tFall\KickOut\Builds\Don'tFall\DF_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Arthur\Documents\Source Tree\Don'tFall\KickOut\Builds\Don'tFall\DF_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Arthur\Documents\Source Tree\Don'tFall\KickOut\Builds\Don'tFall\DF_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Arthur\Documents\Source Tree\Don'tFall\KickOut\Builds\Don'tFall\DF_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Arthur\Documents\Source Tree\Don'tFall\KickOut\Builds\Don'tFall\DF_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Arthur\Documents\Source Tree\Don'tFall\KickOut\Builds\Don'tFall\DF_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Arthur\Documents\Source Tree\Don'tFall\KickOut\Builds\Don'tFall\DF_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Arthur\Documents\Source Tree\Don'tFall\KickOut\Builds\Don'tFall\DF_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\Arthur\Documents\Source Tree\Don'tFall\KickOut\Builds\Don'tFall\DF_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.021 seconds
+Platform assembly: C:\Users\Arthur\Documents\Source Tree\Don'tFall\KickOut\Builds\Don'tFall\DF_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Arthur\Documents\Source Tree\Don'tFall\KickOut\Builds\Don'tFall\DF_Data\Managed\System.dll (this message is harmless)
+Platform assembly: C:\Users\Arthur\Documents\Source Tree\Don'tFall\KickOut\Builds\Don'tFall\DF_Data\Managed\Mono.Security.dll (this message is harmless)
+desktop: 2560x1080 60Hz; virtual: 2560x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 1.118725 ms
+Unloading 7 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 4.630843 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 586.
+Total: 0.402264 ms (FindLiveObjects: 0.078797 ms CreateObjectMapping: 0.027479 ms MarkObjects: 0.291683 ms  DeleteObjects: 0.003972 ms)
+
+System.String[]
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+abc
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+qwe
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+def
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+System.Collections.Generic.Dictionary`2[System.String,System.String]
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+System.Collections.Generic.Dictionary`2[System.String,System.String]
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Initialize engine version: 5.6.1f1 (2860b30f0b54)
+GfxDevice: creating device client; threaded=1
+d3d11: D3D_FEATURE_LEVEL_11_1 not-recognized (only 11.0 runtime installed?)
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 750 Ti (ID=0x1380)
+    Vendor:   NVIDIA
+    VRAM:     1993 MB
+    Driver:   9.18.13.5306
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Arthur\Documents\Source Tree\Don'tFall\KickOut\Builds\Don'tFall\DF_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Arthur\Documents\Source Tree\Don'tFall\KickOut\Builds\Don'tFall\DF_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Arthur\Documents\Source Tree\Don'tFall\KickOut\Builds\Don'tFall\DF_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Arthur\Documents\Source Tree\Don'tFall\KickOut\Builds\Don'tFall\DF_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Arthur\Documents\Source Tree\Don'tFall\KickOut\Builds\Don'tFall\DF_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Arthur\Documents\Source Tree\Don'tFall\KickOut\Builds\Don'tFall\DF_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Arthur\Documents\Source Tree\Don'tFall\KickOut\Builds\Don'tFall\DF_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Arthur\Documents\Source Tree\Don'tFall\KickOut\Builds\Don'tFall\DF_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Arthur\Documents\Source Tree\Don'tFall\KickOut\Builds\Don'tFall\DF_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\Arthur\Documents\Source Tree\Don'tFall\KickOut\Builds\Don'tFall\DF_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.019 seconds
+Platform assembly: C:\Users\Arthur\Documents\Source Tree\Don'tFall\KickOut\Builds\Don'tFall\DF_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Arthur\Documents\Source Tree\Don'tFall\KickOut\Builds\Don'tFall\DF_Data\Managed\System.dll (this message is harmless)
+Platform assembly: C:\Users\Arthur\Documents\Source Tree\Don'tFall\KickOut\Builds\Don'tFall\DF_Data\Managed\Mono.Security.dll (this message is harmless)
+desktop: 2560x1080 60Hz; virtual: 2560x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 1.039928 ms
+Unloading 7 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 4.661303 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 586.
+Total: 0.302940 ms (FindLiveObjects: 0.037743 ms CreateObjectMapping: 0.026486 ms MarkObjects: 0.235068 ms  DeleteObjects: 0.003641 ms)
+
+System.String[]
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+abc
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+qwe
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+def
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+ghi
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+System.Collections.Generic.Dictionary`2[System.String,System.String]
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+System.Collections.Generic.Dictionary`2[System.String,System.String]
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+System.Collections.Generic.Dictionary`2[System.String,System.String]
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: f8c -> priority: 1 
-  Thread -> id: 231c -> priority: 1 
+  Thread -> id: 1adc -> priority: 1 
+  Thread -> id: 25b4 -> priority: 1 
+10/29/2017 9:38:49 PM|Fatal|WebSocket.acceptException|SocketIO.SocketIOException: Invalid argument type. STRING received while expecting OBJECT
+                              at SocketIO.Parser.Parse (.JSONObject json) [0x00000] in <filename unknown>:0 
+                              at SocketIO.SocketIOComponent.HandleMessage (SocketIO.Packet packet) [0x00000] in <filename unknown>:0 
+                              at SocketIO.SocketIOComponent.OnMessage (System.Object sender, WebSocketSharp.MessageEventArgs e) [0x00000] in <filename unknown>:0 
+                              at WebSocketSharp.Ext.Emit[MessageEventArgs] (System.EventHandler`1 eventHandler, System.Object sender, WebSocketSharp.MessageEventArgs e) [0x00000] in <filename unknown>:0 
+                              at WebSocketSharp.WebSocket+<startReceiving>c__AnonStorey4.<>m__1 (WebSocketSharp.WebSocketFrame frame) [0x00000] in <filename unknown>:0 
+10/29/2017 9:38:49 PM|Fatal|WebSocket.acceptException|SocketIO.SocketIOException: Invalid argument type. STRING received while expecting OBJECT
+                              at SocketIO.Parser.Parse (.JSONObject json) [0x00000] in <filename unknown>:0 
+                              at SocketIO.SocketIOComponent.HandleMessage (SocketIO.Packet packet) [0x00000] in <filename unknown>:0 
+                              at SocketIO.SocketIOComponent.OnMessage (System.Object sender, WebSocketSharp.MessageEventArgs e) [0x00000] in <filename unknown>:0 
+                              at WebSocketSharp.Ext.Emit[MessageEventArgs] (System.EventHandler`1 eventHandler, System.Object sender, WebSocketSharp.MessageEventArgs e) [0x00000] in <filename unknown>:0 
+                              at WebSocketSharp.WebSocket+<startReceiving>c__AnonStorey4.<>m__1 (WebSocketSharp.WebSocketFrame frame) [0x00000] in <filename unknown>:0 10/29/2017 9:38:49 PM|Fatal|WebSocket.acceptException|SocketIO.SocketIOException: Invalid argument type. STRING received while expecting OBJECT
+                              at SocketIO.Parser.Parse (.JSONObject json) [0x00000] in <filename unknown>:0 
+                              at SocketIO.SocketIOComponent.HandleMessage (SocketIO.Packet packet) [0x00000] in <filename unknown>:0 
+                              at SocketIO.SocketIOComponent.OnMessage (System.Object sender, WebSocketSharp.MessageEventArgs e) [0x00000] in <filename unknown>:0 
+                              at WebSocketSharp.Ext.Emit[MessageEventArgs] (System.EventHandler`1 eventHandler, System.Object sender, WebSocketSharp.MessageEventArgs e) [0x00000] in <filename unknown>:0 
+                              at WebSocketSharp.WebSocket+<startReceiving>c__AnonStorey4.<>m__1 (WebSocketSharp.WebSocketFrame frame) [0x00000] in <filename unknown>:0 
+
+10/29/2017 9:38:49 PM|Fatal|WebSocket.acceptException|System.ObjectDisposedException: The object was used after being disposed.
+                              at System.Net.Sockets.NetworkStream.CheckDisposed () [0x00000] in <filename unknown>:0 
+                              at System.Net.Sockets.NetworkStream.EndRead (IAsyncResult ar) [0x00000] in <filename unknown>:0 
+                              at WebSocketSharp.Ext+<ReadBytesAsync>c__AnonStorey2.<>m__0 (IAsyncResult ar) [0x00000] in <filename unknown>:0 
+10/29/2017 9:38:49 PM|Fatal|WebSocket.acceptException|System.ObjectDisposedException: The object was used after being disposed.
+                              at System.Net.Sockets.NetworkStream.CheckDisposed () [0x00000] in <filename unknown>:0 
+                              at System.Net.Sockets.NetworkStream.EndRead (IAsyncResult ar) [0x00000] in <filename unknown>:0 
+                              at WebSocketSharp.Ext+<ReadBytesAsync>c__AnonStorey2.<>m__0 (IAsyncResult ar) [0x00000] in <filename unknown>:0 
+10/29/2017 9:38:49 PM|Fatal|WebSocket.acceptException|System.ObjectDisposedException: The object was used after being disposed.
+                              at System.Net.Sockets.NetworkStream.CheckDisposed () [0x00000] in <filename unknown>:0 
+                              at System.Net.Sockets.NetworkStream.EndRead (IAsyncResult ar) [0x00000] in <filename unknown>:0 
+                              at WebSocketSharp.Ext+<ReadBytesAsync>c__AnonStorey2.<>m__0 (IAsyncResult ar) [0x00000] in <filename unknown>:0 
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: c1c -> priority: 1 
+  Thread -> id: 2540 -> priority: 1 
+10/29/2017 9:38:50 PM|Error|WebSocket.Send|The WebSocket connection has already been closed.
+10/29/2017 9:38:50 PM|Error|WebSocket.Send|The WebSocket connection has already been closed.
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 1c14 -> priority: 1 
+  Thread -> id: 27ac -> priority: 1 
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 24ec -> priority: 1 
+  Thread -> id: 243c -> priority: 1 

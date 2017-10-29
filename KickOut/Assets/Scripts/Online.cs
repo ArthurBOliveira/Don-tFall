@@ -2,11 +2,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Online : MonoBehaviour
 {
     public string NAME;
     public string ROOM;
+    public int DEATHS;
+
+    public Text txtScore;
 
     private SocketIOComponent socket;
 
@@ -17,6 +21,13 @@ public class Online : MonoBehaviour
     private void Awake()
     {
         socket = GameObject.FindGameObjectWithTag("Socket").GetComponent<SocketIOComponent>();
+        DEATHS = 0;
+    }
+
+    private void Start()
+    {
+        txtScore = GameObject.FindGameObjectWithTag("PlayerTxtScore").GetComponent<Text>();
+        txtScore.text = NAME + ": " + DEATHS;
     }
 
     private void FixedUpdate()
@@ -34,6 +45,7 @@ public class Online : MonoBehaviour
         data["z"] = gameObject.transform.position.z.ToString();
         data["name"] = NAME;
         data["room"] = ROOM;
+        data["deaths"] = DEATHS.ToString();
         data["xr"] = gameObject.transform.rotation.x.ToString();
         data["yr"] = gameObject.transform.rotation.y.ToString();
         data["zr"] = gameObject.transform.rotation.z.ToString();
@@ -72,6 +84,9 @@ public class Online : MonoBehaviour
 
         GetComponent<Rigidbody>().velocity = new Vector3();
         transform.position = spawn.transform.position;
+        DEATHS++;
+
+        txtScore.text = NAME + ": " + DEATHS;
     }
     #endregion
 }

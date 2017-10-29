@@ -24,16 +24,20 @@ public class GameController : MonoBehaviour
     public bool isOnline;
     public bool isPlaying = false;
 
+    public Text[] scoresTxts;
+
     private SocketIOComponent socket;
 
     private string playerName;
     private string currentRoom;
 
+    private int players;
+
     #region Private
     private void Awake()
     {
         isPlaying = false;
-        socket = GameObject.FindGameObjectWithTag("Socket").GetComponent<SocketIOComponent>();        
+        socket = GameObject.FindGameObjectWithTag("Socket").GetComponent<SocketIOComponent>();
     }
 
     private void Start()
@@ -69,6 +73,8 @@ public class GameController : MonoBehaviour
     {
         if (!isOnline) return;
 
+        players = 1;
+
         mainGame.SetActive(false);
         chooseUI.gameObject.SetActive(true);
     }
@@ -87,7 +93,7 @@ public class GameController : MonoBehaviour
 
             if (p != "null")
                 InstatiateNewPlayer(p, currentRoom, new Vector3());
-        }             
+        }
     }
 
     private void InstatiateNewPlayer(string _name, string _room, Vector3 position)
@@ -95,19 +101,29 @@ public class GameController : MonoBehaviour
         GameObject mp = Instantiate(onlinePlayer, position, onlinePlayer.transform.rotation);
         mp.GetComponent<OnlinePlayer>().NAME = _name;
         mp.GetComponent<OnlinePlayer>().ROOM = _room;
+        mp.GetComponent<OnlinePlayer>().DEATHS = 0;
+
+        #region Set up score texts
+        if (players < 9)
+        {
+            mp.GetComponent<OnlinePlayer>().txtScore = scoresTxts[players];
+
+            players++;
+        }
+        #endregion
     }
     #endregion
 
     #region Public
     public void SetUpNewPlayer(SocketIOEvent obj)
-    {        
+    {
         Dictionary<string, string> data = obj.data.ToDictionary();
         Debug.Log(data);
 
         string room = data["room"];
         string _name = data["name"];
         if (room != currentRoom || playerName == _name) return;
-        
+
         float x = float.Parse(data["x"]);
         float y = float.Parse(data["y"]);
         float z = float.Parse(data["z"]);
@@ -118,6 +134,15 @@ public class GameController : MonoBehaviour
         GameObject mp = Instantiate(onlinePlayer, spawn, onlinePlayer.transform.rotation);
         mp.GetComponent<OnlinePlayer>().NAME = _name;
         mp.GetComponent<OnlinePlayer>().ROOM = room;
+
+        #region Set up score texts
+        if (players < 9)
+        {
+            mp.GetComponent<OnlinePlayer>().txtScore = scoresTxts[players];
+
+            players++;
+        }
+        #endregion
     }
 
     public void SetUpCurrentPlayers(SocketIOEvent obj)

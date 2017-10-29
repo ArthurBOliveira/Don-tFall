@@ -2,17 +2,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class OnlinePlayer : MonoBehaviour
 {
     public string NAME;
     public string ROOM;
+    public int DEATHS;
 
     public float bulletSpeed = -10;
 
     public GameObject bulletPrefab;
     public GameObject bombPrefab;
     public Transform bulletSpawn;
+
+    public Text txtScore;
 
     private SocketIOComponent socket;
     private string actionFire = "Fire";
@@ -35,7 +39,6 @@ public class OnlinePlayer : MonoBehaviour
     #region Public
     public void PlayerActionServer(SocketIOEvent obj)
     {
-        Debug.Log(obj);
         Dictionary<string, string> data = obj.data.ToDictionary();
 
         StartCoroutine(PlayerAction(data));        
@@ -57,6 +60,9 @@ public class OnlinePlayer : MonoBehaviour
 
             transform.position = new Vector3(x, y, z);
             transform.rotation = new Quaternion(xr, yr, zr, wr);
+
+            DEATHS = int.Parse(data["deaths"]);
+            txtScore.text = NAME + ": " + DEATHS;
         }
     }
 
