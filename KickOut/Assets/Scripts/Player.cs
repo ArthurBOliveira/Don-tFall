@@ -39,6 +39,10 @@ public class Player : MonoBehaviour
         score = 0;
         //txtScore.text = "Score: " + score;
         //txtBombs.text = "Bombs: " + bombs;
+
+        Button btnShoot = GameObject.FindGameObjectWithTag("BtnShoot").GetComponent<Button>();
+
+        btnShoot.onClick.AddListener(CmdFire);
     }
 
     private void FixedUpdate()
