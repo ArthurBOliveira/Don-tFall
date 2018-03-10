@@ -19,4 +19,19 @@ public class Menu : MonoBehaviour {
     {
         SceneManager.LoadScene("SocketTest");
     }
+
+    public void Support()
+    {
+        SceneManager.LoadScene("Support");
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("Menu");
+    }
+
+    public void Site()
+    {
+        Application.OpenURL("https://nivelhard.herokuapp.com/");
+    }
 }
